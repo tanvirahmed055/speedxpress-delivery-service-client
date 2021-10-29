@@ -15,10 +15,6 @@ const Login = () => {
 
 
 
-
-
-
-
     let handleLoginForGoogle = () => {
         handleGoogleLogin()
             .then((result) => {

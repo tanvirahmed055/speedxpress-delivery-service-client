@@ -5,7 +5,7 @@ import { HashLink } from 'react-router-hash-link';
 
 const Footer = () => {
     return (
-        <div className="mt-5  text-white" style={{ backgroundColor: 'RGB(15, 71, 192)' }}>
+        <div className="mt-5  text-white" style={{ backgroundColor: 'RGB(15, 71, 192)', maxWidth: '100vw' }}>
             <Container className="pt-4">
                 <Row>
                     <Col sm={5}>
@@ -54,17 +54,15 @@ const Footer = () => {
 
                     </Col>
                 </Row>
-
-            </Container>
-            <Container>
                 <Row>
-                    <Col className="d-flex flex-column align-self-end justify-content-center pb-1 text-warning fw-bold">
+                    <Col className="d-flex flex-column align-self-end justify-content-center pb-1  fw-bold">
                         <hr />
-                        <h5 className="">Copyright © 2021 SpeedXpress, All Rights Reserved.
+                        <h5 className="text-warning">Copyright © 2021 SpeedXpress, All Rights Reserved.
 
                         </h5></Col>
                 </Row>
             </Container>
+
         </div>
     );
 };

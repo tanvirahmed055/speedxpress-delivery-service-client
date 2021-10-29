@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import AuthProvider from './context/AuthProvider';
 import Login from './components/Login/Login/Login';
+import OrderPage from './components/Home/OrderPage/OrderPage/OrderPage';
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <Route exact path="/login">
               <Login></Login>
+            </Route>
+            <Route exact path="/orderPage">
+              <OrderPage></OrderPage>
             </Route>
           </Switch>
         </Router>
