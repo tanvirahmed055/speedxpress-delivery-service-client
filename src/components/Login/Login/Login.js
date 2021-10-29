@@ -14,6 +14,11 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
 
 
+    let history = useHistory();
+    let location = useLocation();
+
+    let { from } = location.state || { from: { pathname: "/" } };
+
 
     let handleLoginForGoogle = () => {
         handleGoogleLogin()
@@ -22,6 +27,9 @@ const Login = () => {
 
                 // ...
                 console.log(result);
+
+                history.push(from);
+
             }).catch((error) => {
                 // Handle Errors here.
 
