@@ -10,7 +10,7 @@ import {
 import AuthProvider from './context/AuthProvider';
 import Login from './components/Login/Login/Login';
 import OrderPage from './components/Home/OrderPage/OrderPage/OrderPage';
-
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -27,9 +27,9 @@ function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <Route exact path="/orderPage">
+            <PrivateRoute exact path="/orderPage/:serviceId">
               <OrderPage></OrderPage>
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Router>
 
