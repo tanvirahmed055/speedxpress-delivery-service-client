@@ -7,23 +7,30 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import AuthProvider from './context/AuthProvider';
+import Login from './components/Login/Login/Login';
 
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-        <Switch>
-          <Route path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-        </Switch>
-      </Router>
+    <AuthProvider>
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route exact path="/home">
+              <Home></Home>
+            </Route>
+            <Route exact path="/login">
+              <Login></Login>
+            </Route>
+          </Switch>
+        </Router>
 
-    </div>
+      </div>
+    </AuthProvider>
   );
 }
 
