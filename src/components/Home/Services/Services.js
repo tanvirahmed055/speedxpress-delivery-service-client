@@ -33,7 +33,7 @@ const Services = () => {
         <div className="container mt-5 mb-5" id="services">
             <h1 className="text-center mb-4">Our Services</h1>
             <h4 className="text-center mb-5 text-secondary">Diverse transport and logistics solutions</h4>
-            <Row xs={1} md={3} className="g-4">
+            <Row xs={1} md={3} className="">
                 {
                     servicesData.map(service => <Service key={service.id} service={service}></Service>)
                 }

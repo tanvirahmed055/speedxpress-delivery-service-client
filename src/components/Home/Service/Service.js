@@ -11,10 +11,10 @@ const Service = (props) => {
                 <Card.Img src={service.img} alt="Card image" style={{ height: '400px' }} className="" />
                 <Card.ImgOverlay className="service-centered">
                     <Card.Title className="text-warning fw-bolder text-start" >{service.name}</Card.Title>
-                    <Card.Text className="text-white  text-start fw-bold text-nowrap">
+                    <Card.Text className="text-white  text-start fw-bold">
                         {service.shortDescription}
                     </Card.Text>
-                    <Button variant="outline-light fw-bold" className="service-button rounded-pill px-2" size="sm">Book Now</Button>
+                    <Button variant="outline-light fw-bold" className="service-button rounded-pill" size="sm">Book Now</Button>
                 </Card.ImgOverlay>
             </Card>
         </Col >
