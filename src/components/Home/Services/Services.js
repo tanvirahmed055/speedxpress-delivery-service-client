@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import Service from '../Service/Service';
-
+import './Services.css'
 
 const Services = () => {
 
@@ -30,14 +30,14 @@ const Services = () => {
     ];
 
     return (
-        <div className="container mt-5 mb-5" id="services">
+        <div className="container mt-5 mb-5" id="services" style={{ maxWidth: '100vw' }}>
             <h1 className="text-center mb-4">Our Services</h1>
             <h4 className="text-center mb-5 text-secondary">Diverse transport and logistics solutions</h4>
-            <Row xs={1} md={3} className="">
+            {<Row xs={1} md={3} className="">
                 {
                     servicesData.map(service => <Service key={service.id} service={service}></Service>)
                 }
-            </Row>
+            </Row>}
 
         </div>
     );
