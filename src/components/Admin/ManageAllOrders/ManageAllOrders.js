@@ -21,16 +21,33 @@ const ManageAllOrders = () => {
             })
     }, [orders])
 
-    const handleUpdate = id => {
+    const handleUpdate = (id, order) => {
         console.log(id);
+
+
+
+        fetch(`http://localhost:5000/updateOrderStatus/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(order),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
     }
 
     return (
         <div>
             <Header></Header>
             <div className="container mt-5 mb-5" id="" style={{ maxWidth: '100vw' }}>
-                <h1 className="text-center mb-4">My Orders</h1>
-                <h4 className="text-center mb-5 text-secondary">See all of your orders here</h4>
+                <h1 className="text-center mb-4">All Users Orders</h1>
+                <h4 className="text-center mb-5 text-secondary">See all the users orders here</h4>
                 <h2 className="text-center mb-5 ">Number of Orders: {orders?.length}</h2>
                 {
                     <div>
@@ -55,7 +72,7 @@ const ManageAllOrders = () => {
                                             <td>{order?.price}</td>
                                             <td>{order?.email}</td>
                                             <td>{order?.status}</td>
-                                            <td>  <Button variant="primary" onClick={() => handleUpdate(order?._id)}>Update Status</Button>
+                                            <td>  <Button variant="primary" onClick={() => handleUpdate(order?._id, order)}>Update Status</Button>
                                             </td>
 
                                         </tr>
