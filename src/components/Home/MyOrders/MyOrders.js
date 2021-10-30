@@ -13,7 +13,7 @@ const MyOrders = () => {
     const userEmail = userInfo?.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${userEmail}`)
+        fetch(`https://desolate-spire-55005.herokuapp.com/orders/${userEmail}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
@@ -26,7 +26,7 @@ const MyOrders = () => {
         const confirmation = window.confirm("Are you sure you want to delete this order ?");
 
         if (confirmation) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://desolate-spire-55005.herokuapp.com/deleteOrder/${id}`, {
                 method: 'DELETE',
             })
                 .then(response => response.json())

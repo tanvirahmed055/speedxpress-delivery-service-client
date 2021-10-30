@@ -35,7 +35,7 @@ const OrderPageContent = () => {
 
         console.log(newOrder);
 
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://desolate-spire-55005.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ const OrderPageContent = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${serviceId}`)
+        fetch(`https://desolate-spire-55005.herokuapp.com/services/${serviceId}`)
             .then(res => res.json())
             .then(data => setService(data))
     }, [service])

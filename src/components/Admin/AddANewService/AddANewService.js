@@ -21,7 +21,7 @@ const AddANewService = () => {
             price: data.price
         }
 
-        fetch('http://localhost:5000/addService', {
+        fetch('https://desolate-spire-55005.herokuapp.com/addService', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ const ManageAllOrders = () => {
     const userEmail = userInfo?.email;
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://desolate-spire-55005.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
@@ -26,7 +26,7 @@ const ManageAllOrders = () => {
 
 
 
-        fetch(`http://localhost:5000/updateOrderStatus/${id}`, {
+        fetch(`https://desolate-spire-55005.herokuapp.com/updateOrderStatus/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
