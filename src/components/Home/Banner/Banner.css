@@ -19,7 +19,7 @@
 @media only screen and (max-width: 600px) {
         .centered {
             position: absolute;
-            bottom: 45%;
+            top: 95%;
             left: 50%;
             transform: translate(-50%, -50%);
           }

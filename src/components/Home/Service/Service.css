@@ -16,3 +16,12 @@
 }
 
 
+/* media query for mobile devices  */
+@media only screen and (max-width: 600px) {
+  .service-centered {
+      position: absolute;
+      top: 32%;
+      left: 31%;
+      transform: translate(-50%, -50%);
+    }
+}
