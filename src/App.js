@@ -34,7 +34,7 @@ function App() {
               <OrderPage></OrderPage>
             </PrivateRoute>
 
-            <PrivateRoute exact path="/myOrders/:userId">
+            <PrivateRoute exact path="/myOrders">
               <MyOrders></MyOrders>
             </PrivateRoute>
             <PrivateRoute exact path="/manageAllOrders">
