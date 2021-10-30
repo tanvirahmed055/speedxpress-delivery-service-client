@@ -19,18 +19,22 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
 
+
+
+
                         {userInfo?.displayName && <Nav.Link className="me-2 fw-bold text-white" >Signed in as: {userInfo?.displayName}</Nav.Link>}
 
-                        <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="">Services</HashLink>
 
-                        <HashLink className="me-2 nav-link text-white" style={{ color: 'black', fontWeight: 'bold' }} to="">Clients</HashLink>
+                        {userInfo?.email ? <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="">My Orders</HashLink> :
+                            <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="">Services</HashLink>
+                        }
 
-                        <HashLink className="me-2 nav-link text-white" style={{ color: 'black', fontWeight: 'bold' }} to="">Why Choose Us</HashLink>
+                        {userInfo?.email ? <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="">Manage All Orders</HashLink> :
+                            <HashLink className="me-2 nav-link text-white" style={{ color: 'black', fontWeight: 'bold' }} to="">Clients</HashLink>
+                        }
 
-                        {
-                            userInfo?.email && <Link to="/admin">
-                                <Button variant="primary" className="me-3 mb-1">Admin</Button>
-                            </Link>
+                        {userInfo?.email ? <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="">Add A New Service</HashLink> :
+                            <HashLink className="me-2 nav-link text-white" style={{ color: 'black', fontWeight: 'bold' }} to="">Why Choose Us</HashLink>
                         }
 
                         {userInfo?.email ? <Link to="/">

@@ -1,6 +1,6 @@
 .service-centered {
     position: absolute;
-    top: 70%;
+    top: 50%;
     left: 32%;
     transform: translate(-50%, -50%);
   }
@@ -9,5 +9,10 @@
     margin-right: 120px;
 }
 
+
+
+.image-text-background { 
+  background-color: rgba(7, 4, 4, 0.5);
+}
 
 
