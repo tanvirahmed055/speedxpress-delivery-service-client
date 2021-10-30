@@ -18,8 +18,39 @@ const OrderPageContent = () => {
     const [service, setService] = useState({});
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        data.status = 'pending';
 
+        const newOrder = {
+            name: data.username,
+            email: data.email,
+            phone: data.phonenumber,
+            location: data.location,
+        }
+
+        newOrder.status = 'pending';
+        newOrder.serviceId = service?._id;
+        newOrder.serviceName = service?.title;
+        newOrder.price = service?.price;
+
+        console.log(newOrder);
+
+        fetch('http://localhost:5000/addOrder', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newOrder),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+
+    }
 
 
     useEffect(() => {
