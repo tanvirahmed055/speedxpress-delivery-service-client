@@ -24,7 +24,7 @@ const MyOrders = () => {
 
     return (
         <div>
-            {/* <Header></Header> */}
+            <Header></Header>
             <div className="container mt-5 mb-5" id="" style={{ maxWidth: '100vw' }}>
                 <h1 className="text-center mb-4">My Orders</h1>
                 <h4 className="text-center mb-5 text-secondary">See all of your orders here</h4>
@@ -65,7 +65,7 @@ const MyOrders = () => {
                 }
 
             </div>
-            {/* <Footer></Footer> */}
+            <Footer></Footer>
         </div>
     );
 };
