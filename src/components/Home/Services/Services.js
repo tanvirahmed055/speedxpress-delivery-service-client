@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Row } from 'react-bootstrap';
 import Service from '../Service/Service';
+import Spinner from 'react-bootstrap/Spinner';
 import './Services.css'
 
 const Services = () => {
-
+    const [loading, setLoading] = useState(true);
     const [services, setServices] = useState([]);
 
     useEffect(() => {
+        setLoading(true);
         fetch('http://localhost:5000/services')
             .then(res => res.json())
-            .then(data => setServices(data))
-    }, [services])
+            .then(data => {
+                setServices(data);
+                setLoading(false);
+            })
+    }, [])
 
 
     return (
@@ -20,7 +25,8 @@ const Services = () => {
             <h4 className="text-center mb-5 text-secondary">Diverse transport and logistics solutions</h4>
             {<Row xs={1} md={3} className="gy-4">
                 {
-                    services?.map(service => <Service key={service._id} service={service}></Service>)
+                    loading ? <Spinner animation="grow" className="mx-auto" /> :
+                        services?.map(service => <Service key={service._id} service={service}></Service>)
                 }
             </Row>}
 
