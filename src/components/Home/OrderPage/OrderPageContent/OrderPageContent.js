@@ -15,7 +15,7 @@ const OrderPageContent = () => {
 
     const { userInfo } = useAuth();
 
-    const [services, setServices] = useState([]);
+    const [service, setService] = useState({});
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = data => console.log(data);
@@ -23,20 +23,20 @@ const OrderPageContent = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch(`http://localhost:5000/services/${serviceId}`)
             .then(res => res.json())
-            .then(data => setServices(data))
-    }, [services])
+            .then(data => setService(data))
+    }, [service])
 
 
     return (
         <Container className="text-center mt-5">
             <Row>
                 <Col sm={7}>
-                    <Image src={servicesData[0]?.img} style={{ width: '330px', height: '330px' }} className="text-center" fluid />
-                    <h3 className="fw-bolder text-center mt-3">Service Name:&nbsp;{servicesData[0]?.name}</h3>
-                    <p className="text-center mt-3 mb-4"><span className="text-decoration-underline">Service Description:</span>&nbsp;{servicesData[0]?.detailDescription}</p>
-                    <h5>Package Price: &nbsp;${servicesData[0]?.price}</h5>
+                    <Image src={service?.imgUrl} style={{ width: '330px', height: '330px' }} className="text-center" fluid />
+                    <h3 className="fw-bolder text-center mt-3">Service Name:&nbsp;{service?.title}</h3>
+                    <p className="text-center mt-3 mb-4"><span className="text-decoration-underline">Service Description:</span>&nbsp;{service?.detailDescription}</p>
+                    <h5>Package Price: &nbsp;${service?.price}</h5>
                 </Col>
                 <Col sm={5}>
                     <Container className="order-form-container p-3">

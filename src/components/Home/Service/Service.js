@@ -21,7 +21,7 @@ const Service = (props) => {
                     <Card.Text className="text-white  text-start fw-bold fs-5 image-text-background">
                         {service?.shortDescription}
                     </Card.Text>
-                    <Button variant="outline-light fw-bold" className="service-button rounded-pill image-text-background" size="sm" onClick={() => history.push(`/orderPage/${service.id}`)}>Book Now</Button>
+                    <Button variant="outline-light fw-bold" className="service-button rounded-pill image-text-background" size="sm" onClick={() => history.push(`/orderPage/${service._id}`)}>Book Now</Button>
                 </Card.ImgOverlay>
             </Card>
         </Col >
