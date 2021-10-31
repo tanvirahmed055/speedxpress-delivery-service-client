@@ -14,6 +14,7 @@ import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import AddANewService from './components/Admin/AddANewService/AddANewService';
 import ManageAllOrders from './components/Admin/ManageAllOrders/ManageAllOrders';
 import MyOrders from './components/Home/MyOrders/MyOrders';
+import NotFound from './components/Home/NotFound/NotFound';
 
 function App() {
   return (
@@ -44,8 +45,10 @@ function App() {
               <AddANewService></AddANewService>
             </PrivateRoute>
           </Switch>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
         </Router>
-
       </div>
     </AuthProvider>
   );
