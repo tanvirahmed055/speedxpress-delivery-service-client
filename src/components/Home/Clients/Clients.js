@@ -10,7 +10,7 @@ const Clients = () => {
 
     useEffect(() => {
         setLoading(true);
-        fetch('http://localhost:5000/clients')
+        fetch('https://desolate-spire-55005.herokuapp.com/clients')
             .then(res => res.json())
             .then(data => {
                 setClients(data);
