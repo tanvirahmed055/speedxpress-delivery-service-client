@@ -25,9 +25,9 @@ const Footer = () => {
 
                             <HashLink className="me-2 nav-link" style={{ color: 'white' }} to="/home#services">Services</HashLink>
 
-                            <HashLink className="me-2 nav-link" style={{ color: 'white' }} to="/home#team">Features</HashLink>
+                            <HashLink className="me-2 nav-link" style={{ color: 'white' }} to="/home#features">Features</HashLink>
 
-                            <HashLink className="me-2 nav-link" style={{ color: 'white' }} to="/home#about">Clients</HashLink>
+                            <HashLink className="me-2 nav-link" style={{ color: 'white' }} to="/home#clients">Clients</HashLink>
                         </ul>
 
                     </Col>

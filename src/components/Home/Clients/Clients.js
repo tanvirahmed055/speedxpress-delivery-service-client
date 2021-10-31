@@ -32,7 +32,7 @@ const Clients = () => {
     ]
 
     return (
-        <div className="container mt-5 mb-5" id="client">
+        <div className="container mt-5 mb-5" id="clients">
             <h3 className="fw-bolder mb-3 text-primary">Clients Testimonial</h3>
             <p className="text-center mb-4">Hear what our client's has to say about us.</p>
             <Row xs={1} md={3} className="g-4">

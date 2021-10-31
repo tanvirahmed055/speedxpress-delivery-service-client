@@ -3,6 +3,7 @@ import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import useAuth from '../../../hooks/useAuth';
 import { HashLink } from 'react-router-hash-link';
+import './Header.css';
 
 const Header = () => {
     const { userInfo, handleLogOut } = useAuth();
@@ -25,29 +26,27 @@ const Header = () => {
                         {userInfo?.displayName && <Nav.Link className="me-2 fw-bold text-white" >Signed in as: {userInfo?.displayName}</Nav.Link>}
 
 
-                        {userInfo?.email ? <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="">My Orders</HashLink> :
-                            <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="">Services</HashLink>
+                        {userInfo?.email ? <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="/myOrders">My Orders</HashLink> :
+                            <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="/home#services">Services</HashLink>
                         }
 
-                        {userInfo?.email ? <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="">Manage All Orders</HashLink> :
-                            <HashLink className="me-2 nav-link text-white" style={{ color: 'black', fontWeight: 'bold' }} to="">Clients</HashLink>
+                        {userInfo?.email ? <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="/manageAllOrders">Manage All Orders</HashLink> :
+                            <HashLink className="me-2 nav-link text-white" style={{ color: 'black', fontWeight: 'bold' }} to="/home#features">Why Choose Us</HashLink>
                         }
 
-                        {userInfo?.email ? <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="">Add A New Service</HashLink> :
-                            <HashLink className="me-2 nav-link text-white" style={{ color: 'black', fontWeight: 'bold' }} to="">Why Choose Us</HashLink>
+                        {userInfo?.email ? <HashLink className="me-2 nav-link text-white" style={{ fontWeight: 'bold' }} to="/addANewService">Add A New Service</HashLink> :
+                            <HashLink className="me-2 nav-link text-white" style={{ color: 'black', fontWeight: 'bold' }} to="/home#clients">Clients</HashLink>
+
+
                         }
 
                         {userInfo?.email ? <Link to="/">
-                            <Button variant="warning" className="me-3 mb-1" onClick={() => handleLogOut()}>Logout</Button>
+                            <Button variant="danger" className="me-3 mb-1 fw-bold" onClick={() => handleLogOut()}>Logout</Button>
                         </Link> :
                             <Link to="/login">
-                                <Button variant="warning" className="me-3">Login</Button>
+                                <Button variant="primary" className="me-3 fw-bold">Login</Button>
                             </Link>
                         }
-
-                        <Link to="/register">
-                            <Button variant="danger" className="me-3">Signup</Button>
-                        </Link>
 
                     </Nav>
                 </Navbar.Collapse>

@@ -4,7 +4,7 @@ import './Features.css'
 const Features = () => {
 
     return (
-        <div className="container-fluid mt-5 mb-5 pt-5" >
+        <div className="container-fluid mt-5 mb-5 pt-5" id="features">
             <h3 className="fw-bolder mb-3 text-primary">Powerful Features</h3>
             <h5 className="text-center mb-4 text-secondary text-bold">We're dedicated to customers and focused on quality
             </h5>
