@@ -24,8 +24,6 @@ const ManageAllOrders = () => {
     const handleUpdate = (id, order) => {
         console.log(id);
 
-
-
         fetch(`https://desolate-spire-55005.herokuapp.com/updateOrderStatus/${id}`, {
             method: 'PUT',
             headers: {
@@ -36,6 +34,7 @@ const ManageAllOrders = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                alert('Successfully updated order status');
             })
             .catch((error) => {
                 console.error('Error:', error);
