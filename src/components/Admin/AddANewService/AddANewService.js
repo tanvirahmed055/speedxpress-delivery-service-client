@@ -31,6 +31,8 @@ const AddANewService = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                alert('Successfully added a new service');
+                reset();
             })
             .catch((error) => {
                 console.error('Error:', error);
