@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import { Button, Card, Col, Form, Row } from 'react-bootstrap';
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Button, Card } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
 import {
     useHistory,
@@ -11,9 +10,6 @@ import './Login.css';
 
 const Login = () => {
     const { handleGoogleLogin } = useAuth();
-
-    const [errorMessage, setErrorMessage] = useState('');
-
 
     let history = useHistory();
     let location = useLocation();

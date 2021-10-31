@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import {
     useParams
 } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Image from 'react-bootstrap/Image';
 import useAuth from '../../../../hooks/useAuth';
-import './OrderPageContent.css'
+import './OrderPageContent.css';
 
 
 const OrderPageContent = () => {

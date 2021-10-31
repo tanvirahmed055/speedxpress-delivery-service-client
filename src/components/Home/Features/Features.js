@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
-import './Features.css'
+import './Features.css';
+
+
 const Features = () => {
 
     return (

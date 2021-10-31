@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Card, Col, Button, Table } from 'react-bootstrap';
-import useAuth from '../../../hooks/useAuth';
+import { Button, Table } from 'react-bootstrap';
 import Header from '../../Shared/Header/Header';
 import Footer from '../../Shared/Footer/Footer';
 
 const ManageAllOrders = () => {
 
-    const { userInfo } = useAuth();
-
     const [orders, setOrders] = useState([]);
-
-    const userEmail = userInfo?.email;
 
     useEffect(() => {
         fetch('https://desolate-spire-55005.herokuapp.com/orders')

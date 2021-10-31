@@ -11,7 +11,7 @@ const AddANewService = () => {
 
 
     const onSubmit = data => {
-        console.log(data);
+        //console.log(data);
 
         const newService = {
             title: data.title,
