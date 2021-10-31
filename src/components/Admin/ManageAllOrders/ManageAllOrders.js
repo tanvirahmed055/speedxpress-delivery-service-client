@@ -12,12 +12,12 @@ const ManageAllOrders = () => {
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
-                console.log(orders)
+                //console.log(orders)
             })
     }, [orders])
 
     const handleUpdate = (id, order) => {
-        console.log(id);
+        //console.log(id);
 
         fetch(`https://desolate-spire-55005.herokuapp.com/updateOrderStatus/${id}`, {
             method: 'PUT',
@@ -28,7 +28,7 @@ const ManageAllOrders = () => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Success:', data);
+                //console.log('Success:', data);
                 alert('Successfully updated order status');
             })
             .catch((error) => {
@@ -60,7 +60,7 @@ const ManageAllOrders = () => {
                                 {
                                     orders?.map((order, index) => {
 
-                                        return <tr>
+                                        return <tr key={order?._id}>
                                             <td>{index}</td>
                                             <td>{order?.serviceName}</td>
                                             <td>{order?.price}</td>

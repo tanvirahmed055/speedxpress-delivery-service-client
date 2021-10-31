@@ -33,7 +33,7 @@ const OrderPageContent = () => {
         newOrder.serviceName = service?.title;
         newOrder.price = service?.price;
 
-        console.log(newOrder);
+        //console.log(newOrder);
 
         fetch('https://desolate-spire-55005.herokuapp.com/addOrder', {
             method: 'POST',
@@ -44,7 +44,7 @@ const OrderPageContent = () => {
         })
             .then(response => response.json())
             .then(data => {
-                console.log('Success:', data);
+                //console.log('Success:', data);
                 alert('Congrats! You have successfully ordered the service');
                 reset();
             })

@@ -17,12 +17,12 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => {
                 setOrders(data)
-                console.log(orders)
+                //console.log(orders)
             })
     }, [orders])
 
     const handleDelete = id => {
-        console.log(id);
+        //console.log(id);
         const confirmation = window.confirm("Are you sure you want to delete this order ?");
 
         if (confirmation) {
@@ -31,7 +31,7 @@ const MyOrders = () => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Success:', data);
+                    //console.log('Success:', data);
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -64,7 +64,7 @@ const MyOrders = () => {
                                 {
                                     orders?.map((order, index) => {
 
-                                        return <tr>
+                                        return <tr key={order?._id}>
                                             <td>{index}</td>
                                             <td>{order?.serviceName}</td>
                                             <td>{order?.price}</td>

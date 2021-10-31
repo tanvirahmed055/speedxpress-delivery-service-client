@@ -7,7 +7,7 @@ import {
 
 const Service = (props) => {
     const { service } = props;
-    console.log(service);
+    //console.log(service);
 
     let history = useHistory();
 

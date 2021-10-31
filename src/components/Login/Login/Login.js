@@ -23,7 +23,7 @@ const Login = () => {
                 // The signed-in user info.
 
                 // ...
-                console.log(result);
+                //console.log(result);
 
                 history.push(from);
 
