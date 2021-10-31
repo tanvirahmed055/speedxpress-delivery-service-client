@@ -44,10 +44,10 @@ function App() {
             <PrivateRoute exact path="/addANewService">
               <AddANewService></AddANewService>
             </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
         </Router>
       </div>
     </AuthProvider>
