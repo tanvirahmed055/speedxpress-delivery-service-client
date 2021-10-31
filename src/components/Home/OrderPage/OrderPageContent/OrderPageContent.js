@@ -17,7 +17,7 @@ const OrderPageContent = () => {
 
     const [service, setService] = useState({});
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.status = 'pending';
 
@@ -45,6 +45,8 @@ const OrderPageContent = () => {
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                alert('Congrats! You have successfully ordered the service');
+                reset();
             })
             .catch((error) => {
                 console.error('Error:', error);
